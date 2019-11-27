@@ -8,5 +8,7 @@ box = pd.DataFrame(data, columns = ['Box', 'Dimension', 'Value'])
 
 tidy = box.pivot_table(index = 'Box', columns = 'Dimension', values = 'Value').reset_index()
 
+tidy['Volume'] = tidy.Height * tidy.Length * tidy.Width
+
 print('\n')
 print(tidy)
